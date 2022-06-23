@@ -1,0 +1,21 @@
+{
+  "name": "@agmedia/stylelint-config",
+  "version": "1.0.3",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "peerDependencies": {
+    "@signal-noise/stylelint-scales": "^2.0.3",
+    "stylelint": "^14.9.1",
+    "stylelint-color-format": "^1.1.0",
+    "stylelint-config-recommended-scss": "^5.0.2",
+    "stylelint-csstree-validator": "^2.0.0",
+    "stylelint-declaration-block-no-ignored-properties": "^2.5.0",
+    "stylelint-high-performance-animation": "^1.6.0",
+    "stylelint-no-unresolved-module": "^2.0.0",
+    "stylelint-no-unsupported-browser-features": "^5.0.3",
+    "stylelint-order": "^5.0.0"
+  }
+}
