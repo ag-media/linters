@@ -1,0 +1,23 @@
+{
+  "name": "linters",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ag-media/linters.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ag-media/linters/issues"
+  },
+  "homepage": "https://github.com/ag-media/linters#readme",
+  "devDependencies": {
+    "@agmedia/eslint-config": "^1.0.3"
+  }
+}
