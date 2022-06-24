@@ -65,6 +65,7 @@ module.exports = {
         'function-calc-no-unspaced-operator': true,
         'no-extra-semicolons': true,
         'max-nesting-depth': 10,
+        'declaration-block-no-duplicate-properties': true,
         'string-quotes': 'single',
         'at-rule-no-vendor-prefix': true,
         'media-feature-name-no-vendor-prefix': true,
