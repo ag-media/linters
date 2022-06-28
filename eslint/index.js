@@ -192,6 +192,7 @@ module.exports = {
                 },
             },
         ],
+        'id-denylist': ['error', 'Updates'],
         'no-unreachable': 'error',
         'no-multiple-empty-lines': 'error',
         'class-methods-use-this': [
