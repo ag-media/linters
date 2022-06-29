@@ -127,7 +127,6 @@ module.exports = {
         'react/static-property-placement': 'error',
         'react/jsx-curly-brace-presence': ['error', {props: 'never', children: 'never'}],
         'react/jsx-first-prop-new-line': ['error', 'multiline'],
-        'react/jsx-closing-tag-location': 'error',
         'react/self-closing-comp': 'error',
         'react/jsx-closing-bracket-location': ['error', {
             nonEmpty: 'line-aligned',
