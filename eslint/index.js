@@ -123,9 +123,22 @@ module.exports = {
         'react/prop-types': 'error',
         'react/forbid-foreign-prop-types': 'error',
         'react/jsx-indent': ['error', 4],
-        'react/jsx-indent-props': ['error', 'first'],
+        'react/jsx-indent-props': ['error', 4],
         'react/static-property-placement': 'error',
         'react/jsx-curly-brace-presence': ['error', {props: 'never', children: 'never'}],
+        'react/jsx-first-prop-new-line': ['error', 'multiline'],
+        'react/jsx-closing-tag-location': 'error',
+        'react/self-closing-comp': 'error',
+        'react/jsx-closing-bracket-location': ['error', {
+            nonEmpty: 'line-aligned',
+            selfClosing: 'line-aligned',
+        }],
+        'react/jsx-max-props-per-line': ['error', {
+            maximum: {
+                single: 4,
+                multi: 1,
+            },
+        }],
         'import/named': 'off',
         'import/order': [
             'error',
