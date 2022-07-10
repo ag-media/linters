@@ -76,6 +76,8 @@ module.exports = {
         'no-missing-end-of-source-newline': true,
         'no-eol-whitespace': true,
         'scss/dollar-variable-no-missing-interpolation': true,
+        'function-comma-space-before': 'never',
+        'function-comma-space-after': 'always',
         'scss/dollar-variable-colon-space-after': 'always',
         'scss/dollar-variable-colon-space-before': 'never',
         'scss/no-duplicate-dollar-variables': true,
