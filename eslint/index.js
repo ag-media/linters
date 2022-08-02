@@ -138,6 +138,13 @@ module.exports = {
                 multi: 1,
             },
         }],
+        'react/jsx-sort-props': ['error', {
+            callbacksLast: true,
+            ignoreCase: false,
+            shorthandFirst: true,
+            reservedFirst: true,
+        }],
+
         'import/named': 'off',
         'import/order': [
             'error',
