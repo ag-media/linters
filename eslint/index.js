@@ -88,6 +88,7 @@ module.exports = {
         '@typescript-eslint/space-infix-ops': 'error',
         'camelcase': 'off',
 
+        'unicorn/prefer-code-point': 'off',
         'unicorn/prevent-abbreviations': 'off',
         'unicorn/no-null': 'off',
         'unicorn/prefer-switch': 'off',
@@ -197,6 +198,7 @@ module.exports = {
                 ignore: ['Console'],
             },
         ],
+        'import/no-named-as-default': 'off',
         'import/namespace': 'off',
         'no-warning-comments': ['warn', {'terms': ['todo', 'fixme', 'bugbug'], 'location': 'start'}],
         'eol-last': ['error', 'always'],

@@ -1,13 +1,19 @@
 {
-  "name": "@agmedia/eslint-config",
-  "version": "1.0.25",
+  "name": "@agmedia/eslint-config-nextjs",
+  "version": "1.0.35",
   "description": "",
   "main": "index.js",
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "scripts": {
+    "build": "cp ../eslint/index.js ./base.js"
+  },
   "peerDependencies": {
+    "@typescript-eslint/eslint-plugin": ">= 5.12.0",
+    "@typescript-eslint/parser": ">= 5.12.0",
     "eslint": ">= 8.15.0",
+    "eslint-config-next": "^12.2.5",
     "eslint-import-resolver-webpack": ">= 0.13.2",
     "eslint-plugin-cypress": ">= 2.12.1",
     "eslint-plugin-import": ">= 2.26.0",
@@ -15,8 +21,6 @@
     "eslint-plugin-mocha": ">= 10.0.4",
     "eslint-plugin-react": ">= 7.30.1",
     "eslint-plugin-storybook": ">= 0.5.12",
-    "eslint-plugin-unicorn": "^42.0.0",
-    "@typescript-eslint/eslint-plugin": ">= 5.12.0",
-    "@typescript-eslint/parser": ">= 5.12.0"
+    "eslint-plugin-unicorn": "^42.0.0"
   }
 }
