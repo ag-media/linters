@@ -121,6 +121,7 @@ module.exports = {
         // '@babel/object-curly-spacing': ['error', 'never'],
         '@typescript-eslint/object-curly-spacing': ['error', 'never'],
 
+        'react/jsx-equals-spacing': ['error', 'never'],
         'react/prop-types': 'error',
         'react/forbid-foreign-prop-types': 'error',
         'react/jsx-indent': ['error', 4],
