@@ -217,7 +217,7 @@ module.exports = {
         ],
         'id-denylist': ['error', 'Updates'],
         'no-unreachable': 'error',
-        'no-multiple-empty-lines': ['error', {'maxBOF': 0}],
+        'no-multiple-empty-lines': ['error', {max: 2, maxBOF: 0}],
         'class-methods-use-this': [
             'error',
             {
