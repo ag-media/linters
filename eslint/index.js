@@ -32,6 +32,13 @@ module.exports = {
                 'plugin:storybook/recommended',
             ],
         },
+        {
+            files: ['**/*.d.ts'],
+            rules: {
+                'import/no-unassigned-import': 'off',
+                '@typescript-eslint/no-empty-interface': 'off'
+            },
+        },
     ],
     rules: {
         '@typescript-eslint/no-empty-function': 'off',
