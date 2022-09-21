@@ -99,6 +99,7 @@ module.exports = {
         'unicorn/no-useless-undefined': ['error', {'checkArguments': false}],
         'unicorn/prefer-node-protocol': 'off',
         'unicorn/prefer-module': 'off',
+        'unicorn/template-indent': 'off',
         'no-unsafe-optional-chaining': 'error',
         'curly': ['error', 'all'],
 
@@ -216,7 +217,7 @@ module.exports = {
         ],
         'id-denylist': ['error', 'Updates'],
         'no-unreachable': 'error',
-        'no-multiple-empty-lines': 'error',
+        'no-multiple-empty-lines': ['error', {'maxBOF': 0}],
         'class-methods-use-this': [
             'error',
             {
