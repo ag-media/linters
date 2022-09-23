@@ -7,7 +7,8 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "build": "cp ../eslint/index.js ./base.js"
+    "build": "cp ../eslint/index.js ./base.js",
+    "pub": "npm version patch --force && npm run build && npm publish"
   },
   "peerDependencies": {
     "@typescript-eslint/eslint-plugin": ">= 5.12.0",

@@ -6,6 +6,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "scripts": {
+    "pub": "npm version patch --force && npm publish"
+  },
   "peerDependencies": {
     "@signal-noise/stylelint-scales": "^2.0.3",
     "stylelint": "^14.9.1",
