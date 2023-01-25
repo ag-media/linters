@@ -15,10 +15,11 @@ module.exports = {
     'rules': {
         'plugin/no-unsupported-browser-features': [true, {
             'severity': 'warning',
-            ignore: ['css-sticky', 'user-select-none', 'word-break', 'pointer'],
+            ignore: ['css-sticky', 'user-select-none', 'word-break', 'pointer', 'css3-cursors', 'css-gradients'],
         }],
         'csstree/validator': {
             'syntaxExtensions': ['sass'],
+            'ignoreProperties': ['grid-template', 'grid-template-columns'],
         },
         'plugin/no-unresolved-module': {},
         'plugin/declaration-block-no-ignored-properties': true,
@@ -106,7 +107,6 @@ module.exports = {
                 ],
             },
         ],
-        'no-empty-source': null,
         'at-rule-no-unknown': [
             true,
             {
