@@ -1,6 +1,6 @@
 {
   "name": "@agmedia/stylelint-config",
-  "version": "1.0.5",
+  "version": "1.0.9",
   "description": "",
   "main": "index.js",
   "keywords": [],
@@ -11,7 +11,7 @@
   },
   "peerDependencies": {
     "@signal-noise/stylelint-scales": "^2.0.3",
-    "stylelint": "^14.9.1",
+    "stylelint": "^14.16.1",
     "stylelint-color-format": "^1.1.0",
     "stylelint-config-recommended-scss": "^5.0.2",
     "stylelint-csstree-validator": "^2.0.0",
