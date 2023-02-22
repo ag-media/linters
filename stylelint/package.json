@@ -1,6 +1,6 @@
 {
   "name": "@agmedia/stylelint-config",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "",
   "main": "index.js",
   "keywords": [],
@@ -9,7 +9,7 @@
   "scripts": {
     "pub": "npm version patch --force && npm publish"
   },
-  "peerDependencies": {
+  "dependencies": {
     "@signal-noise/stylelint-scales": "^2.0.3",
     "stylelint": "^14.16.1",
     "stylelint-color-format": "^1.1.0",
