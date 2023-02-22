@@ -185,6 +185,7 @@ module.exports = {
         ],
         'import/first': 'error',
         'import/newline-after-import': 'error',
+        'import/no-extraneous-dependencies': 'error',
         'import/no-unassigned-import': [
             'error',
             {
