@@ -12,14 +12,14 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Use .npmrc
-        uses: bduff9/use-npmrc@v1.1
+        uses: bduff9/use-npmrc@v2.0
         with:
           dot-npmrc: |
             unsafe-perm=true
             //registry.npmjs.org/:_authToken=${{ secrets.NPM_PUBLISH_TOKEN }}
 
       - name: Check version
-        id: package_version
+        id: version
         run: |
           PACKAGE_VERSION="$(node -p -e "require('./package.json').version")"
           PACKAGE_NAME="$(node -p -e "require('./package.json').name")"
@@ -27,7 +27,6 @@ jobs:
           IS_NEW_VERSION=$((npm view "$PACKAGE_NAME@$PACKAGE_VERSION" versions 2>/dev/null | grep -q "$PACKAGE_VERSION") && echo false || echo true)
 
           echo "is_new=$IS_NEW_VERSION" >> "$GITHUB_OUTPUT"
-          echo "is_new=$IS_NEW_VERSION"
 
           if [[ $IS_NEW_VERSION == "true" ]]; then
             echo "$PACKAGE_NAME@$PACKAGE_VERSION is a new version"
@@ -40,4 +39,4 @@ jobs:
         run: npm run build
       - name: Publish
         run: npm publish --access public
-        if: steps.package_version.outputs.is_new == 'true'
+        if: steps.version.outputs.is_new == 'true'
