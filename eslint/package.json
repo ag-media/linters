@@ -1,14 +1,12 @@
 {
-  "name": "@agmedia/eslint-config",
+  "name": "@ag-media/eslint-config",
   "version": "1.1.12",
   "description": "",
   "main": "index.js",
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "scripts": {
-    "pub": "npm version patch --force && npm publish"
-  },
+  "scripts": {},
   "dependencies": {
     "eslint": ">= 8.15.0",
     "eslint-import-resolver-webpack": ">= 0.13.2",

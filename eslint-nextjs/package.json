@@ -1,5 +1,5 @@
 {
-  "name": "@agmedia/eslint-config-nextjs",
+  "name": "@ag-media/eslint-config-nextjs",
   "version": "1.1.7",
   "description": "",
   "main": "index.js",
@@ -7,8 +7,7 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "build": "cp ../eslint/index.js ./base.js",
-    "pub": "npm version patch --force && npm run build && npm publish"
+    "build": "cp ../eslint/index.js ./base.js"
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": ">= 5.12.0",
