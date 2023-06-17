@@ -39,5 +39,5 @@ jobs:
       - name: Build
         run: npm run build
       - name: Publish
-        run: npm publish --access public
+        run: npm publish --access public --userconfig ./.npmrc
         if: steps.version.outputs.is_new == 'true'
