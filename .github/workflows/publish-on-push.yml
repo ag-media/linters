@@ -33,6 +33,7 @@ jobs:
           else
             echo "$PACKAGE_NAME@$PACKAGE_VERSION is not a new version"
           fi
+      - run: cat ./.npmrc
       - run: npm whoami --userconfig ./.npmrc
       - name: Install
         run: npm ci --no-optional
