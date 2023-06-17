@@ -6,7 +6,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "scripts": {},
+  "scripts": {
+    "build": "echo PLACEHOLDER"
+  },
   "dependencies": {
     "@signal-noise/stylelint-scales": "^2.0.3",
     "stylelint": "^14.16.1",

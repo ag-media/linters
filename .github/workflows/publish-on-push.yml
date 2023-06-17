@@ -4,9 +4,11 @@ on:
     branches:
       - master
 jobs:
-  publish-on-push:
+  publish-eslint-config:
     runs-on: self-hosted
-    name: publish-on-push
+    defaults:
+      run:
+        working-directory: eslint
     steps:
       - uses: actions/checkout@v3
       - name: Use .npmrc
@@ -16,16 +18,22 @@ jobs:
             unsafe-perm=true
             //registry.npmjs.org/:_authToken=${{ secrets.NPM_PUBLISH_TOKEN }}
 
-      - name: build @ag-media/eslint-config-nextjs
-        working-directory: eslint-nextjs
-        run: npm run build
+      - name: Check version
+        id: package_version
+        run: |
+          export PACKAGE_VERSION="$(node -p -e "require('./package.json').version")"
+          export PACKAGE_NAME="$(node -p -e "require('./package.json').name")"
 
-      - name: publish @ag-media/eslint-config
-        working-directory: eslint
+          IS_NEW_VERSION=$(npm view "$PACKAGE_NAME@$PACKAGE_VERSION" versions 1>/dev/null 2>/dev/null && echo true || echo false)
+          echo "is_new=$IS_NEW_VERSION\n" >> $GITHUB_OUTPUT
+      - name: debug
+        run: echo $is_new
+        env:
+          is_new: ${{steps.package_version.outputs.is_new}}
+      - name: Install
+        run: npm ci --no-optional
+      - name: Build
+        run: npm run build
+      - name: Publish
         run: npm publish --access public
-      - name: publish @ag-media/eslint-config-nextjs
-        working-directory: eslint-nextjs
-        run: npm publish --access public
-      - name: publish @ag-media/stylelint-config
-        working-directory: stylelint
-        run: npm publish --access public
+        if: steps.package_version.outputs.is_new == 'true'
