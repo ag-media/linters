@@ -1,11 +1,11 @@
 {
   "name": "@ag-media/eslint-config",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "description": "",
   "main": "index.js",
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "AG Media",
+  "license": "MIT",
   "scripts": {
     "build": "echo PLACEHOLDER"
   },

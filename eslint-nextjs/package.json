@@ -1,11 +1,11 @@
 {
   "name": "@ag-media/eslint-config-nextjs",
-  "version": "1.1.7",
+  "version": "1.1.14",
   "description": "",
   "main": "index.js",
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "AG Media",
+  "license": "MIT",
   "scripts": {
     "build": "cp ../eslint/index.js ./base.js"
   },
