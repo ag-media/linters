@@ -36,12 +36,10 @@ jobs:
           else
             echo "$PACKAGE_NAME@$PACKAGE_VERSION is not a new version"
           fi
-      - run: cat ./.npmrc
-      - run: npm whoami --userconfig ./.npmrc
       - name: Install
         run: npm ci --no-optional
       - name: Build
         run: npm run build
       - name: Publish
-        run: npm publish --access public --userconfig ./.npmrc
+        run: npm publish --access public
         if: steps.version.outputs.is_new == 'true'
