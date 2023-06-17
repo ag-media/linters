@@ -24,7 +24,7 @@ jobs:
           PACKAGE_VERSION="$(node -p -e "require('./package.json').version")"
           PACKAGE_NAME="$(node -p -e "require('./package.json').name")"
 
-          IS_NEW_VERSION=$(npm view "$PACKAGE_NAME@$PACKAGE_VERSION" versions 2>/dev/null | grep -q "$PACKAGE_VERSION" && echo true || echo false)
+          IS_NEW_VERSION=$((npm view "$PACKAGE_NAME@$PACKAGE_VERSION" versions 2>/dev/null | grep -q "$PACKAGE_VERSION") && echo false || echo true)
 
           echo "is_new=$IS_NEW_VERSION" >> "$GITHUB_OUTPUT"
           echo "is_new=$IS_NEW_VERSION"
