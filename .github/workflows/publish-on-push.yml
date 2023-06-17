@@ -43,3 +43,83 @@ jobs:
       - name: Publish
         run: npm publish --access public
         if: steps.version.outputs.is_new == 'true'
+
+  publish-eslint-nextjs-config:
+    runs-on: self-hosted
+    env:
+      working-directory: eslint-nextjs
+    defaults:
+      run:
+        working-directory: ${{ env.working-directory }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use .npmrc
+        uses: bduff9/use-npmrc@v1.2
+        with:
+          working-directory: ${{ env.working-directory }}
+          dot-npmrc: |
+            unsafe-perm=true
+            //registry.npmjs.org/:_authToken=${{ secrets.NPM_PUBLISH_TOKEN }}
+
+      - name: Check version
+        id: version
+        run: |
+          PACKAGE_VERSION="$(node -p -e "require('./package.json').version")"
+          PACKAGE_NAME="$(node -p -e "require('./package.json').name")"
+
+          IS_NEW_VERSION=$((npm view "$PACKAGE_NAME@$PACKAGE_VERSION" versions 2>/dev/null | grep -q "$PACKAGE_VERSION") && echo false || echo true)
+
+          echo "is_new=$IS_NEW_VERSION" >> "$GITHUB_OUTPUT"
+
+          if [[ $IS_NEW_VERSION == "true" ]]; then
+            echo "$PACKAGE_NAME@$PACKAGE_VERSION is a new version"
+          else
+            echo "$PACKAGE_NAME@$PACKAGE_VERSION is not a new version"
+          fi
+      - name: Install
+        run: npm ci --no-optional
+      - name: Build
+        run: npm run build
+      - name: Publish
+        run: npm publish --access public
+        if: steps.version.outputs.is_new == 'true'
+
+  publish-stylelint-config:
+    runs-on: self-hosted
+    env:
+      working-directory: stylelint
+    defaults:
+      run:
+        working-directory: ${{ env.working-directory }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use .npmrc
+        uses: bduff9/use-npmrc@v1.2
+        with:
+          working-directory: ${{ env.working-directory }}
+          dot-npmrc: |
+            unsafe-perm=true
+            //registry.npmjs.org/:_authToken=${{ secrets.NPM_PUBLISH_TOKEN }}
+
+      - name: Check version
+        id: version
+        run: |
+          PACKAGE_VERSION="$(node -p -e "require('./package.json').version")"
+          PACKAGE_NAME="$(node -p -e "require('./package.json').name")"
+
+          IS_NEW_VERSION=$((npm view "$PACKAGE_NAME@$PACKAGE_VERSION" versions 2>/dev/null | grep -q "$PACKAGE_VERSION") && echo false || echo true)
+
+          echo "is_new=$IS_NEW_VERSION" >> "$GITHUB_OUTPUT"
+
+          if [[ $IS_NEW_VERSION == "true" ]]; then
+            echo "$PACKAGE_NAME@$PACKAGE_VERSION is a new version"
+          else
+            echo "$PACKAGE_NAME@$PACKAGE_VERSION is not a new version"
+          fi
+      - name: Install
+        run: npm ci --no-optional
+      - name: Build
+        run: npm run build
+      - name: Publish
+        run: npm publish --access public
+        if: steps.version.outputs.is_new == 'true'
