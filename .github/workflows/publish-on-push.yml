@@ -25,11 +25,13 @@ jobs:
           export PACKAGE_NAME="$(node -p -e "require('./package.json').name")"
 
           IS_NEW_VERSION=$(npm view "$PACKAGE_NAME@$PACKAGE_VERSION" versions 1>/dev/null 2>/dev/null && echo true || echo false)
-          echo "is_new=$IS_NEW_VERSION\n" >> $GITHUB_OUTPUT
-      - name: debug
-        run: echo $is_new
-        env:
-          is_new: ${{steps.package_version.outputs.is_new}}
+          echo "is_new=$IS_NEW_VERSION" >> $GITHUB_OUTPUT
+
+          if [[ $IS_NEW_VERSION -eq "true" ]]; then
+            echo "$PACKAGE_NAME@$PACKAGE_VERSION is a new version"
+          else
+            echo "$PACKAGE_NAME@$PACKAGE_VERSION is not a new version"
+          fi
       - name: Install
         run: npm ci --no-optional
       - name: Build
