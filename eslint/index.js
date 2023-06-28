@@ -95,6 +95,7 @@ module.exports = {
         '@typescript-eslint/space-infix-ops': 'error',
         'camelcase': 'off',
 
+        'unicorn/no-negated-condition': 'off',
         'unicorn/prefer-code-point': 'off',
         'unicorn/prevent-abbreviations': 'off',
         'unicorn/no-null': 'off',
